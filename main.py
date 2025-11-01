@@ -4,7 +4,7 @@ import pyautogui
 import numpy as np
 
 # Inicialização da câmera e do MediaPipe
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 424)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
 
@@ -24,7 +24,7 @@ scr_w, scr_h = pyautogui.size()  # Pega a resolução da tela do usuário
 alpha = 0.35  # Filtro exponencial mais responsivo
 prev = None
 DRAW_LANDMARKS = True  # Mostrar landmarks na mão para facilitar o tracking visual
-MIRROR_FEED = False  # Define se o frame deve ser espelhado horizontalmente
+MIRROR_FEED = True  # Define se o frame deve ser espelhado horizontalmente
 
 
 def smooth_position(new_pos):
